@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!-- Author: Natasha Lucio -->
+<!-- Course: CSCI 3300-04 -->
+<!-- Program Date: 4-21-19 -->
+<!-- Description: Assignment 9 -->
+
+<html>
+	<head>
+		<title>Treasure Chest</title>
+		<script type="text/javascript">
+function guesslt()
+{	var given = Math.floor((Math.random()*3) +1);
+	var guess = 0;
+	var count = 1;
+	guess = parseInt(prompt("Enter the number: Red chest(1), Green chest(2), or Blue chest(3)"));
+	if (guess == given)
+	{
+	switch(guess)
+		{
+		case 1:
+			document.getElementById("guessResult").innerHTML=("<h3> Results: YOU WIN!</h3><img src ='red.jpg'>");
+			break;
+		case 2:
+			document.getElementById("guessResult").innerHTML=("<h3> Results: YOU WIN!</h3><img src ='green.jpg'>");
+			break;
+		case 3:
+			document.getElementById("guessResult").innerHTML=("<h3> Results: YOU WIN!</h3><img src ='blue.jpg'>");
+			break;
+		}
+	}
+	else
+	{
+		switch(given)
+		{
+		case 1:
+					switch(guess)
+					{
+					case 1:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='red.jpg'><h3> You picked </h3><img src ='red.jpg'>");
+						break;
+					case 2:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='red.jpg'><h3> You picked </h3><img src ='green.jpg'>");
+						break;
+					case 3:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='red.jpg'><h3> You picked </h3><img src ='blue.jpg'>");
+						break;
+					}
+			break;
+		case 2:
+					switch(guess)
+					{
+					case 1:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='green.jpg'><h3> You picked </h3><img src ='red.jpg'>");
+						break;
+					case 2:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='green.jpg'><h3> You picked </h3><img src ='green.jpg'>");
+						break;
+					case 3:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='green.jpg'><h3> You picked </h3><img src ='blue.jpg'>");
+						break;
+					}
+			break;
+		case 3:
+					switch(guess)
+					{
+					case 1:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='blue.jpg'><h3> You picked </h3><img src ='red.jpg'>");
+						break;
+					case 2:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='blue.jpg'><h3> You picked </h3><img src ='green.jpg'>");
+						break;
+					case 3:
+						document.getElementById("guessResult").innerHTML=("<h3> Results: Sorry you lose <br> Computer picked </h3><img src ='blue.jpg'><h3> You picked </h3><img src ='blue.jpg'>");
+						break;
+					}
+			break;
+		}
+	}
+	
+			<!--document.getElementById("guessResult").innerHTML=("<h3> Sorry, you lose"</h3>");-->
+}
+		</script>
+		<!-- CSS Style -->
+		<style>
+		h2 {
+			color: #39E600; <!-- hex color for shade of green -->
+			font-size: 24px;
+			text-shadow: 1px 1px #ffffff; <!-- text shadow with hex color for white -->
+			text-align: right;
+			}
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			color: #FFCCFF; <!-- hex color for shade of pink -->
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width: 700px; margin: auto; margin-top: 100px; border: 1px solid black; 
+		padding: 5px; background-color: gray;">
+			<h2>Treasure Chest Hunt</h2>
+			<br>
+			<p>This game allows the player to find the chest which contains treasure.
+			If the player enters the chest number that matches the number of the
+			computer hidden treasure chest, the player wins. </p>
+			<img src="chest.jpg" alt="treasure chest">
+		<p>Begin the process by clicking the 'BEGIN' button below.</p>
+		<br /> <hr /><br /> <!-- creates horizontal line -->
+	<!-- creates button for user to click -->
+	<input type="button" onclick="guesslt()" value="BEGIN">
+	<div id="guessResult"> &nbsp;</div>
+		</div>
+	</body>
+</html>
